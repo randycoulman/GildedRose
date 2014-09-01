@@ -1,0 +1,4 @@
+   179.5: flog total
+    29.9: flog/method average
+
+   155.1: GildedRose#update_quality        gilded_rose.rb:17
