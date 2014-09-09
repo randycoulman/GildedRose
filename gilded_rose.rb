@@ -3,18 +3,16 @@ require 'delegate'
 
 class ItemWrapper < SimpleDelegator
   def update
+    return if name == "Sulfuras, Hand of Ragnaros"
     age
     update_quality
   end
 
   def age
-    return if name == "Sulfuras, Hand of Ragnaros"
     self.sell_in -= 1
   end
 
   def update_quality
-    return if name == "Sulfuras, Hand of Ragnaros"
-
     if name == "Aged Brie" || name == "Backstage passes to a TAFKAL80ETC concert"
       increase_quality
       if name == "Backstage passes to a TAFKAL80ETC concert"
