@@ -1,5 +1,5 @@
-    90.6: flog total
-     9.1: flog/method average
+    77.5: flog total
+     7.8: flog/method average
 
-    51.1: ItemWrapper#update_quality       gilded_rose.rb:15
-    18.2: GildedRose#initialize            gilded_rose.rb:59
+    38.1: ItemWrapper#update_quality       gilded_rose.rb:15
+    18.2: GildedRose#initialize            gilded_rose.rb:58
