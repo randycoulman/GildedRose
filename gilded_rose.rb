@@ -61,12 +61,12 @@ end
 
 class BackstagePass < ItemWrapper
   def normal_adjustment
-    adjustment = 1
-    if sell_in < 10
-      adjustment = 2
-    end
     if sell_in < 5
       adjustment = 3
+    elsif sell_in < 10
+      adjustment = 2
+    else
+      adjustment = 1
     end
     adjustment
   end
