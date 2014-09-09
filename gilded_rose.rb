@@ -7,6 +7,8 @@ class ItemWrapper < SimpleDelegator
       AgedBrie.new(item)
     elsif item.name == "Backstage passes to a TAFKAL80ETC concert"
       BackstagePass.new(item)
+    elsif item.name == "Conjured Mana Cake"
+      ConjuredItem.new(item)
     else
       new(item)
     end
@@ -72,6 +74,9 @@ class BackstagePass < ItemWrapper
     end
     adjustment
   end
+end
+
+class ConjuredItem < ItemWrapper
 end
 
 class GildedRose
