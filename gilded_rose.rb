@@ -25,6 +25,9 @@ class ItemWrapper < SimpleDelegator
       end
     else
       decrease_quality
+      if sell_in < 0
+        decrease_quality
+      end
     end
 
     if sell_in < 0
@@ -32,8 +35,6 @@ class ItemWrapper < SimpleDelegator
         increase_quality
       elsif name == "Backstage passes to a TAFKAL80ETC concert"
         self.quality -= quality
-      else
-        decrease_quality
       end
     end
   end
