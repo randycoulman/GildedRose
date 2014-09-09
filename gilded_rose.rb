@@ -56,7 +56,7 @@ class GildedRose
             end
           end
         else
-          item.quality = item.quality - item.quality
+          item.quality -= item.quality
         end
       else
         if item.quality < 50
