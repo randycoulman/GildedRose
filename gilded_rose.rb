@@ -8,9 +8,8 @@ class ItemWrapper < SimpleDelegator
   end
 
   def age
-    if name != "Sulfuras, Hand of Ragnaros"
-      self.sell_in -= 1
-    end
+    return if name == "Sulfuras, Hand of Ragnaros"
+    self.sell_in -= 1
   end
 
   def update_quality
