@@ -9,6 +9,8 @@ class ItemWrapper < SimpleDelegator
       BackstagePass.new(item)
     elsif item.name == "Conjured Mana Cake"
       ConjuredItem.new(item)
+    elsif item.name == "Sulfuras, Hand of Ragnaros"
+      LegendaryItem.new(item)
     else
       new(item)
     end
@@ -77,6 +79,9 @@ class ConjuredItem < ItemWrapper
     end
     adjustment
   end
+end
+
+class LegendaryItem < ItemWrapper
 end
 
 class GildedRose
