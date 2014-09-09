@@ -49,13 +49,12 @@ class ItemWrapper < SimpleDelegator
   end
 
   def increase_quality
-    if quality < 50
-      self.quality += 1
-    end
+    self.quality += 1
   end
 
   def quality=(new_quality)
     new_quality = 0 if new_quality < 0
+    new_quality = 50 if new_quality > 50
     super(new_quality)
   end
 
