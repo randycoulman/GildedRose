@@ -13,8 +13,7 @@ class ItemWrapper < SimpleDelegator
   end
 
   def update_quality
-    adjustment = quality_adjustment
-    self.quality += adjustment
+    self.quality += quality_adjustment
   end
 
   def quality_adjustment
