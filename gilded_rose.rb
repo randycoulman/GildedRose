@@ -60,14 +60,6 @@ class AgedBrie < ItemWrapper
 end
 
 class BackstagePass < ItemWrapper
-  def quality_adjustment
-    if sell_in < 0
-      past_date_adjustment
-    else
-      normal_adjustment
-    end
-  end
-
   def normal_adjustment
     adjustment = 1
     if sell_in < 10
