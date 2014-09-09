@@ -45,9 +45,7 @@ class ItemWrapper < SimpleDelegator
   end
 
   def decrease_quality
-    if quality > 0
-      self.quality -= 1
-    end
+    self.quality -= 1
   end
 
   def increase_quality
@@ -57,7 +55,8 @@ class ItemWrapper < SimpleDelegator
   end
 
   def quality=(new_quality)
-    super
+    new_quality = 0 if new_quality < 0
+    super(new_quality)
   end
 
 end
