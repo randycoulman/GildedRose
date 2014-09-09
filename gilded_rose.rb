@@ -43,7 +43,7 @@ class ItemWrapper < SimpleDelegator
   end
 
   def past_date_adjustment
-    -2
+    2 * normal_adjustment
   end
 
   def quality=(new_quality)
