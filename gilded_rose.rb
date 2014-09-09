@@ -14,6 +14,8 @@ class ItemWrapper < SimpleDelegator
   end
 
   def update_quality
+    return if name == "Sulfuras, Hand of Ragnaros"
+
     if name == "Aged Brie" || name == "Backstage passes to a TAFKAL80ETC concert"
       increase_quality
       if name == "Backstage passes to a TAFKAL80ETC concert"
@@ -24,15 +26,15 @@ class ItemWrapper < SimpleDelegator
           increase_quality
         end
       end
-    elsif name != "Sulfuras, Hand of Ragnaros"
+    else
       decrease_quality
     end
     if sell_in < 0
       if name == "Aged Brie"
         increase_quality
       elsif name == "Backstage passes to a TAFKAL80ETC concert"
-          self.quality -= quality
-      elsif name != "Sulfuras, Hand of Ragnaros"
+        self.quality -= quality
+      else
         decrease_quality
       end
     end
