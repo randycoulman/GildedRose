@@ -29,16 +29,9 @@ class ItemWrapper < SimpleDelegator
   end
 
   def quality_adjustment
-    if name == "Conjured Mana Cake"
+    adjustment = -1
+    if sell_in < 0
       adjustment = -2
-      if sell_in < 0
-        adjustment = -4
-      end
-    else
-      adjustment = -1
-      if sell_in < 0
-        adjustment = -2
-      end
     end
     adjustment
   end
@@ -77,6 +70,13 @@ class BackstagePass < ItemWrapper
 end
 
 class ConjuredItem < ItemWrapper
+  def quality_adjustment
+    adjustment = -2
+    if sell_in < 0
+      adjustment = -4
+    end
+    adjustment
+  end
 end
 
 class GildedRose
