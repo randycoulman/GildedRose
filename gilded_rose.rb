@@ -13,6 +13,7 @@ class ItemWrapper < SimpleDelegator
   end
 
   def update_quality
+    adjustment = 0
     if name == "Aged Brie"
       self.quality += 1
       if sell_in < 0
@@ -40,6 +41,7 @@ class ItemWrapper < SimpleDelegator
         self.quality -= 1
       end
     end
+    self.quality += adjustment
   end
 
   def quality=(new_quality)
