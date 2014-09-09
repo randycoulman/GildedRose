@@ -30,22 +30,18 @@ class ItemWrapper < SimpleDelegator
         self.quality -= quality
       end
     elsif name == "Conjured Mana Cake"
-      decrease_quality
-      decrease_quality
+      self.quality -= 1
+      self.quality -= 1
       if sell_in < 0
-        decrease_quality
-        decrease_quality
+        self.quality -= 1
+        self.quality -= 1
       end
     else
-      decrease_quality
+      self.quality -= 1
       if sell_in < 0
-        decrease_quality
+        self.quality -= 1
       end
     end
-  end
-
-  def decrease_quality
-    self.quality -= 1
   end
 
   def increase_quality
