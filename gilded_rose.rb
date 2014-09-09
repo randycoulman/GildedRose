@@ -66,12 +66,7 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
-      update(ItemWrapper.new(item))
+      ItemWrapper.new(item).update
     end
   end
-
-  def update(item)
-    item.update
-  end
-
 end
