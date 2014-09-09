@@ -17,7 +17,6 @@ class ItemWrapper < SimpleDelegator
   end
 
   def update
-    return if name == "Sulfuras, Hand of Ragnaros"
     age
     update_quality
   end
@@ -82,6 +81,9 @@ class ConjuredItem < ItemWrapper
 end
 
 class LegendaryItem < ItemWrapper
+  def update
+    # Nothing to do - Legendary items don't change
+  end
 end
 
 class GildedRose
