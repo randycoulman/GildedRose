@@ -77,9 +77,10 @@ end
 
 class ConjuredItem < ItemWrapper
   def quality_adjustment
-    adjustment = -2
     if sell_in < 0
       adjustment = -4
+    else
+      adjustment = -2
     end
     adjustment
   end
