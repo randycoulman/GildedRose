@@ -3,7 +3,11 @@ require 'delegate'
 
 class ItemWrapper < SimpleDelegator
   def self.wrap(item)
-    new(item)
+    if item.name == "Aged Brie"
+      AgedBrie.new(item)
+    else
+      new(item)
+    end
   end
 
   def update
@@ -56,7 +60,9 @@ class ItemWrapper < SimpleDelegator
     new_quality = 50 if new_quality > 50
     super(new_quality)
   end
+end
 
+class AgedBrie < ItemWrapper
 end
 
 class GildedRose
