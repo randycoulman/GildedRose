@@ -56,6 +56,10 @@ class ItemWrapper < SimpleDelegator
     end
   end
 
+  def quality=(new_quality)
+    super
+  end
+
 end
 
 class GildedRose
