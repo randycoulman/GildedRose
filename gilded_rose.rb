@@ -32,11 +32,10 @@ class ItemWrapper < SimpleDelegator
 
   def quality_adjustment
     if sell_in < 0
-      adjustment = -2
+      -2
     else
-      adjustment = -1
+      -1
     end
-    adjustment
   end
 
   def quality=(new_quality)
