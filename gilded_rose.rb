@@ -55,7 +55,7 @@ end
 
 class AgedBrie < ItemWrapper
   def normal_adjustment
-    1
+    -super
   end
 end
 
