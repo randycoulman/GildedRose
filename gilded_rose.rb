@@ -77,7 +77,7 @@ end
 
 class ConjuredItem < ItemWrapper
   def normal_adjustment
-    -2
+    2 * super
   end
 end
 
