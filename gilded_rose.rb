@@ -15,30 +15,30 @@ class ItemWrapper < SimpleDelegator
   def update_quality
     adjustment = 0
     if name == "Aged Brie"
-      self.quality += 1
+      adjustment += 1
       if sell_in < 0
-        self.quality += 1
+        adjustment += 1
       end
     elsif name == "Backstage passes to a TAFKAL80ETC concert"
-      self.quality += 1
+      adjustment += 1
       if sell_in < 10
-        self.quality += 1
+        adjustment += 1
       end
       if sell_in < 5
-        self.quality += 1
+        adjustment += 1
       end
       if sell_in < 0
-        self.quality -= quality
+        adjustment = -quality
       end
     elsif name == "Conjured Mana Cake"
-      self.quality -= 2
+      adjustment -= 2
       if sell_in < 0
-        self.quality -= 2
+        adjustment -= 2
       end
     else
-      self.quality -= 1
+      adjustment -= 1
       if sell_in < 0
-        self.quality -= 1
+        adjustment -= 1
       end
     end
     self.quality += adjustment
