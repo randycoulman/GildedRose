@@ -55,9 +55,10 @@ end
 
 class AgedBrie < ItemWrapper
   def quality_adjustment
-    adjustment = 1
     if sell_in < 0
       adjustment = 2
+    else
+      adjustment = 1
     end
     adjustment
   end
