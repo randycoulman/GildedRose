@@ -1,4 +1,8 @@
 require './item.rb'
+require 'delegate'
+
+class ItemWrapper < SimpleDelegator
+end
 
 class GildedRose
 
@@ -16,7 +20,7 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
-      update(item)
+      update(ItemWrapper.new(item))
     end
   end
 
