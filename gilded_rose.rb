@@ -24,22 +24,16 @@ class ItemWrapper < SimpleDelegator
           increase_quality
         end
       end
-    else
-      if name != "Sulfuras, Hand of Ragnaros"
-        decrease_quality
-      end
+    elsif name != "Sulfuras, Hand of Ragnaros"
+      decrease_quality
     end
     if sell_in < 0
       if name == "Aged Brie"
         increase_quality
-      else
-        if name == "Backstage passes to a TAFKAL80ETC concert"
+      elsif name == "Backstage passes to a TAFKAL80ETC concert"
           self.quality -= quality
-        else
-          if name != "Sulfuras, Hand of Ragnaros"
-            decrease_quality
-          end
-        end
+      elsif name != "Sulfuras, Hand of Ragnaros"
+        decrease_quality
       end
     end
   end
@@ -55,6 +49,7 @@ class ItemWrapper < SimpleDelegator
       self.quality += 1
     end
   end
+
 end
 
 class GildedRose
