@@ -31,12 +31,12 @@ class ItemWrapper < SimpleDelegator
     end
     if sell_in < 0
       if name != "Aged Brie"
-        if name != "Backstage passes to a TAFKAL80ETC concert"
+        if name == "Backstage passes to a TAFKAL80ETC concert"
+          self.quality -= quality
+        else
           if name != "Sulfuras, Hand of Ragnaros"
             decrease_quality
           end
-        else
-          self.quality -= quality
         end
       else
         increase_quality
