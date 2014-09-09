@@ -5,6 +5,8 @@ class ItemWrapper < SimpleDelegator
   def self.wrap(item)
     if item.name == "Aged Brie"
       AgedBrie.new(item)
+    elsif item.name == "Backstage passes to a TAFKAL80ETC concert"
+      BackstagePass.new(item)
     else
       new(item)
     end
@@ -65,6 +67,9 @@ class AgedBrie < ItemWrapper
     end
     adjustment
   end
+end
+
+class BackstagePass < ItemWrapper
 end
 
 class GildedRose
