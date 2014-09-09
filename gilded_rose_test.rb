@@ -14,26 +14,22 @@ class CharacterizationTest < Minitest::Test
 
   def test_after_1_day
     rose.update_quality
-    assert_items([9, 19], [1, 1], [4, 6], [0, 80], [14, 21], [2, 5])
-    #assert_items([9, 19], [1, 1], [4, 6], [0, 80], [14, 21], [2, 4])
+    assert_items([9, 19], [1, 1], [4, 6], [0, 80], [14, 21], [2, 4])
   end
 
   def test_after_2_days
     2.times { rose.update_quality }
-    assert_items([8, 18], [0, 2], [3, 5], [0, 80], [13, 22], [1, 4])
-    #assert_items([8, 18], [0, 2], [3, 5], [0, 80], [13, 22], [1, 2])
+    assert_items([8, 18], [0, 2], [3, 5], [0, 80], [13, 22], [1, 2])
   end
 
   def test_after_3_days
     3.times { rose.update_quality }
-    assert_items([7, 17], [-1, 4], [2, 4], [0, 80], [12, 23], [0, 3])
-    #assert_items([7, 17], [-1, 4], [2, 4], [0, 80], [12, 23], [0, 0])
+    assert_items([7, 17], [-1, 4], [2, 4], [0, 80], [12, 23], [0, 0])
   end
 
   def test_after_4_days
     4.times { rose.update_quality }
-    assert_items([6, 16], [-2, 6], [1, 3], [0, 80], [11, 24], [-1, 1])
-    #assert_items([6, 16], [-2, 6], [1, 3], [0, 80], [11, 24], [-1, 0])
+    assert_items([6, 16], [-2, 6], [1, 3], [0, 80], [11, 24], [-1, 0])
   end
 
   def test_after_5_days
