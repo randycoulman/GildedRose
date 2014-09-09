@@ -25,12 +25,7 @@ class ItemWrapper < SimpleDelegator
   end
 
   def quality_adjustment
-    if name == "Aged Brie"
-      adjustment = 1
-      if sell_in < 0
-        adjustment = 2
-      end
-    elsif name == "Backstage passes to a TAFKAL80ETC concert"
+    if name == "Backstage passes to a TAFKAL80ETC concert"
       adjustment = 1
       if sell_in < 10
         adjustment = 2
@@ -63,6 +58,13 @@ class ItemWrapper < SimpleDelegator
 end
 
 class AgedBrie < ItemWrapper
+  def quality_adjustment
+    adjustment = 1
+    if sell_in < 0
+      adjustment = 2
+    end
+    adjustment
+  end
 end
 
 class GildedRose
