@@ -14,17 +14,17 @@ class ItemWrapper < SimpleDelegator
 
   def update_quality
     if name == "Aged Brie"
-      increase_quality
+      self.quality += 1
       if sell_in < 0
-        increase_quality
+        self.quality += 1
       end
     elsif name == "Backstage passes to a TAFKAL80ETC concert"
-      increase_quality
+      self.quality += 1
       if sell_in < 10
-        increase_quality
+        self.quality += 1
       end
       if sell_in < 5
-        increase_quality
+        self.quality += 1
       end
       if sell_in < 0
         self.quality -= quality
@@ -42,10 +42,6 @@ class ItemWrapper < SimpleDelegator
         self.quality -= 1
       end
     end
-  end
-
-  def increase_quality
-    self.quality += 1
   end
 
   def quality=(new_quality)
