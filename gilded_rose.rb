@@ -4,7 +4,16 @@ require 'delegate'
 class ItemWrapper < SimpleDelegator
   def update
     age
+    update_quality
+  end
 
+  def age
+    if name != "Sulfuras, Hand of Ragnaros"
+      self.sell_in -= 1
+    end
+  end
+
+  def update_quality
     if name != "Aged Brie" && name != "Backstage passes to a TAFKAL80ETC concert"
       if name != "Sulfuras, Hand of Ragnaros"
         decrease_quality
@@ -32,12 +41,6 @@ class ItemWrapper < SimpleDelegator
       else
         increase_quality
       end
-    end
-  end
-
-  def age
-    if name != "Sulfuras, Hand of Ragnaros"
-      self.sell_in -= 1
     end
   end
 
