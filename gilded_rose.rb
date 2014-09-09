@@ -2,6 +2,10 @@ require './item.rb'
 require 'delegate'
 
 class ItemWrapper < SimpleDelegator
+  def self.wrap(item)
+    new(item)
+  end
+
   def update
     return if name == "Sulfuras, Hand of Ragnaros"
     age
@@ -71,7 +75,7 @@ class GildedRose
 
   def update_quality
     @items.each do |item|
-      ItemWrapper.new(item).update
+      ItemWrapper.wrap(item).update
     end
   end
 end
