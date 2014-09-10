@@ -6,11 +6,11 @@ class ItemWrapper < SimpleDelegator
     case item.name
       when "Aged Brie"
         AgedBrie.new(item)
-      when "Backstage passes to a TAFKAL80ETC concert"
+      when /Backstage passes/
         BackstagePass.new(item)
-      when "Conjured Mana Cake"
+      when /Conjured/
         ConjuredItem.new(item)
-      when "Sulfuras, Hand of Ragnaros"
+      when /Sulfuras/
         LegendaryItem.new(item)
       else
         new(item)
