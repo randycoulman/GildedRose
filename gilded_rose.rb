@@ -4,16 +4,16 @@ require 'delegate'
 class ItemWrapper < SimpleDelegator
   def self.wrap(item)
     case item.name
-    when "Aged Brie"
-      AgedBrie.new(item)
-    when "Backstage passes to a TAFKAL80ETC concert"
-      BackstagePass.new(item)
-    when "Conjured Mana Cake"
-      ConjuredItem.new(item)
-    when "Sulfuras, Hand of Ragnaros"
-      LegendaryItem.new(item)
-    else
-      new(item)
+      when "Aged Brie"
+        AgedBrie.new(item)
+      when "Backstage passes to a TAFKAL80ETC concert"
+        BackstagePass.new(item)
+      when "Conjured Mana Cake"
+        ConjuredItem.new(item)
+      when "Sulfuras, Hand of Ragnaros"
+        LegendaryItem.new(item)
+      else
+        new(item)
     end
   end
 
@@ -54,10 +54,6 @@ class ItemWrapper < SimpleDelegator
 end
 
 class AgedBrie < ItemWrapper
-  def past_date_adjustment
-    2 * normal_adjustment
-  end
-
   def normal_adjustment
     1
   end
