@@ -80,8 +80,12 @@ class ConjuredItem < ItemWrapper
     if sell_in < 0
       -4
     else
-      -2
+      normal_adjustment
     end
+  end
+
+  def normal_adjustment
+    -2
   end
 end
 
