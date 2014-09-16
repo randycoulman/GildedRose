@@ -56,10 +56,14 @@ end
 class AgedBrie < ItemWrapper
   def quality_adjustment
     if sell_in < 0
-      2
+      past_date_adjustment
     else
       normal_adjustment
     end
+  end
+
+  def past_date_adjustment
+    2
   end
 
   def normal_adjustment
