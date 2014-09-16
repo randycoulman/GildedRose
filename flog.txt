@@ -1,8 +1,8 @@
-    71.6: flog total
-     4.2: flog/method average
+    72.6: flog total
+     4.0: flog/method average
 
-    18.2: GildedRose#initialize            gilded_rose.rb:99
+    18.2: GildedRose#initialize            gilded_rose.rb:103
      9.5: ItemWrapper::wrap                gilded_rose.rb:5
      7.6: BackstagePass#normal_adjustment  gilded_rose.rb:71
-     6.3: BackstagePass#quality_adjustment gilded_rose.rb:63
      5.1: ItemWrapper#quality=             gilded_rose.rb:49
+     4.9: BackstagePass#quality_adjustment gilded_rose.rb:63
