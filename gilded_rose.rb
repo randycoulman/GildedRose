@@ -62,7 +62,7 @@ end
 class BackstagePass < ItemWrapper
   def quality_adjustment
     if sell_in < 0
-      adjustment = -quality
+      -quality
     else
       adjustment = 1
       if sell_in < 10
@@ -71,8 +71,8 @@ class BackstagePass < ItemWrapper
       if sell_in < 5
         adjustment = 3
       end
+      adjustment
     end
-    adjustment
   end
 end
 
