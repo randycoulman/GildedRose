@@ -76,14 +76,6 @@ class BackstagePass < ItemWrapper
 end
 
 class ConjuredItem < ItemWrapper
-  def quality_adjustment
-    if sell_in < 0
-      past_date_adjustment
-    else
-      normal_adjustment
-    end
-  end
-
   def past_date_adjustment
     -4
   end
