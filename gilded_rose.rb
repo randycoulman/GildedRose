@@ -76,10 +76,6 @@ class BackstagePass < ItemWrapper
 end
 
 class ConjuredItem < ItemWrapper
-  def past_date_adjustment
-    2 * normal_adjustment
-  end
-
   def normal_adjustment
     -2
   end
