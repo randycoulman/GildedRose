@@ -55,7 +55,7 @@ end
 
 class AgedBrie < ItemWrapper
   def past_date_adjustment
-    2
+    2 * normal_adjustment
   end
 
   def normal_adjustment
